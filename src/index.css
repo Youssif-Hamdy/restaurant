@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+  .custom-scroll::-webkit-scrollbar {
+    height: 4px; /* يقلل ارتفاع الشريط */
+  }
+
+  .custom-scroll::-webkit-scrollbar-track {
+    background: #f0f0f0; /* خلفية الشريط */
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb {
+    background-color: #d3d3d3; /* اللون الرمادي الفاتح */
+    border-radius: 10px; /* حواف دائرية */
+  }
+
+  .custom-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #b0b0b0; /* تغيير اللون عند التمرير */
+  }
+  :root {
+    --clr-light-860: #d0e7f9; /* أو القيمة المناسبة للون */
+}
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(100%); /* تبدأ من خارج العنصر على اليمين */
+  }
+  50% {
+    transform: translateX(0); /* تصل إلى الوضع الطبيعي (المنتصف) */
+  }
+  100% {
+    transform: translateX(100%); /* تعود إلى نفس النقطة من اليمين */
+  }
+}
+
+.animate-slide {
+  display: inline-block; /* لضمان أن الحركة تتم بشكل صحيح */
+  animation: slideRightToLeft 1s ease-in-out infinite; /* حركة قصيرة بسرعة ثابتة */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%); /* بداية الحركة من أعلى الصورة */
+    opacity: 0; /* بداية غير مرئية */
+  }
+  70% {
+    transform: translateY(10%); /* تبقى في مكان قريب من الأعلى */
+    opacity: 0.7; /* نصف شفافية */
+  }
+  100% {
+    transform: translateY(50%); /* تصل إلى منتصف الصورة */
+    opacity: 1; /* تصبح مرئية تمامًا */
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 3s ease-out forwards; /* مدة الحركة 2 ثانية */
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
